@@ -12,6 +12,7 @@ import uploadRoutes from "./routes/uploadRoutes.js";
 import visualizationRoutes from "./routes/visualizationRoutes.js"; // ✅ NEW
 import aiRoutes from "./routes/aiRoutes.js";
 import pdfRoutes from "./routes/pdfRoutes.js";
+import swaggerSpec, { setupSwagger } from "./swagger.js";
 
 // Middleware
 import { errorHandler } from "./middleware/errorHandler.js"; // centralized error handling
@@ -59,6 +60,8 @@ app.use("/api/ai", aiRoutes);
 
 app.use("/api/pdf", pdfRoutes);
 
+setupSwagger(app, "/docs");
+
 
 // ------------------------------------
 // Default Route
@@ -80,3 +83,5 @@ app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🌐 Environment: ${process.env.NODE_ENV || "development"}`);
 });
+
+// Hello Johan
