@@ -12,8 +12,11 @@ const options = {
         "API docs for DataGlimpse backend — auth, otp, upload, AI endpoints, PDF drafts, visualizations, etc.",
     },
     servers: [
-      { url: "http://localhost:5000", description: "Local (no /api prefix here)" },
-      { url: "https://api.example.com", description: "Production" },
+      { url: "http://localhost:5000", description: "Local" },
+      {
+        url: "https://dataglimpse-backend.onrender.com",
+        description: "Render Production",
+      },
     ],
     components: {
       securitySchemes: {
